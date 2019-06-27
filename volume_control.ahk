@@ -26,7 +26,7 @@ Pause::  ;Pause Break button is my chosen hotkey
 SoundSet, +1, MASTER, mute, DeviceID
 SoundGet, master_mute, , mute, DeviceID
 
-TrayTip, , %master_mute%
+TrayTip, , Microphone %master_mute%
 SetTimer, HideTrayTip, 2000
 
 ToolTip, Mute %master_mute% ;use a tool tip at mouse pointer to show what state mic is after toggle
