@@ -10,7 +10,6 @@
 ;
 ;
 #SingleInstance
-; #NoTrayIcon
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #MaxHotkeysPerInterval, 500
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
@@ -27,9 +26,20 @@ Pause::  ;Pause Break button is my chosen hotkey
 SoundSet, +1, MASTER, mute, DeviceID
 SoundGet, master_mute, , mute, DeviceID
 
+TrayTip, , %master_mute%
+SetTimer, HideTrayTip, 2000
+
 ToolTip, Mute %master_mute% ;use a tool tip at mouse pointer to show what state mic is after toggle
 SetTimer, RemoveToolTip, 1000
 return
+
+HideTrayTip:
+ HideNotif()
+return
+
+HideNotif() {
+  TrayTip
+}
 
 RemoveToolTip:
 SetTimer, RemoveToolTip, Off
