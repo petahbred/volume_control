@@ -15,7 +15,7 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 DeviceID = 6
-SoundSet, +1, MASTER, mute, DeviceID
+SoundSet, 1, MASTER, mute, DeviceID
 Menu, Tray, Icon, mic_muted.ico, , 1
 Menu, Tray, Tip, Mute On
 
