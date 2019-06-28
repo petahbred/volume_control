@@ -26,7 +26,7 @@
 
 ## Usage
 
-Volume Up = WIN + MouseWheel
-Volume Down = WIN + MouseWheel
-Volume Mute = WIN + MouseWheel Button
-Microphone Mute = Pause/Break
+* Volume Up = WIN + MouseWheel
+* Volume Down = WIN + MouseWheel
+* Volume Mute = WIN + MouseWheel Button
+* Microphone Mute = Pause/Break
