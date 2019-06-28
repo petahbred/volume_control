@@ -5,6 +5,7 @@
 1. Install [AutoHotKey](https://www.autohotkey.com/)
 1. Find your `mixer ID`.
     1. I set the input volume for my microphone to something easily identifiable ie. 69
+    1. Double Click/Run the getDeviceId.ahk script.
     1. Once the list shows up, look for the volume level.
     1. Copy the mixer ID.
 1. Set `DeviceID` on line 17 of `VolumeControl.ahk` with your mixer ID found in step 2.3:
