@@ -3,6 +3,7 @@
 ## Compilation Instructions
 
 1. Install [AutoHotKey](https://www.autohotkey.com/)
+1. Clone the repository using `git clone` or download it from github.
 1. Find your `mixer ID`.
     1. I set the input volume for my microphone to something easily identifiable ie. 69
     1. Double Click/Run the `getDeviceId.ahk` script.
