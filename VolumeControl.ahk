@@ -14,9 +14,9 @@
 #MaxHotkeysPerInterval, 500
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-DeviceID = 6 ; Use the getDeviceId.ahk to find out the Mixer ID.
+DeviceID = 5 ; Use the getDeviceId.ahk to find out the Mixer ID.
 SoundSet, 1, MASTER, mute, DeviceID
-Menu, Tray, Icon, icons//muted.png, , 1
+Menu, Tray, Icon, icons\muted.png, , 1
 Menu, Tray, Tip, Mute On
 
 #WheelUp::Send {Volume_Up}
@@ -38,22 +38,22 @@ if (master_mute = "off") {
 
 Menu, Tray, Tip, Mute %master_mute%
 
-ToolTip, Mute %master_mute%
-SetTimer, RemoveToolTip, 1000
-return
+; ToolTip, Mute %master_mute%
+; SetTimer, RemoveToolTip, 1000
+; return
 
-HideTrayTip:
- HideNotif()
-return
+; HideTrayTip:
+;  HideNotif()
+; return
 
-HideNotif() {
-  TrayTip
-}
+; HideNotif() {
+;   TrayTip
+; }
 
-RemoveToolTip:
-SetTimer, RemoveToolTip, Off
-ToolTip
-return
+; RemoveToolTip:
+; SetTimer, RemoveToolTip, Off
+; ToolTip
+; return
 
 ~LWin Up:: return
 ~RWin Up:: return
