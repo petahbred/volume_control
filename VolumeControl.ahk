@@ -38,22 +38,5 @@ if (master_mute = "off") {
 
 Menu, Tray, Tip, Mute %master_mute%
 
-; ToolTip, Mute %master_mute%
-; SetTimer, RemoveToolTip, 1000
-; return
-
-; HideTrayTip:
-;  HideNotif()
-; return
-
-; HideNotif() {
-;   TrayTip
-; }
-
-; RemoveToolTip:
-; SetTimer, RemoveToolTip, Off
-; ToolTip
-; return
-
 ~LWin Up:: return
 ~RWin Up:: return
