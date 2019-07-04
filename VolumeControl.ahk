@@ -16,7 +16,7 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 DeviceID = 5 ; Use the getDeviceId.ahk to find out the Mixer ID.
 SoundSet, 1, MASTER, mute, DeviceID
-Menu, Tray, Icon, icons\muted.png, , 1
+Menu, Tray, Icon, icons//w_muted.png, , 1
 Menu, Tray, Tip, Mute On
 
 #WheelUp::Send {Volume_Up}
@@ -29,10 +29,10 @@ SoundSet, +1, MASTER, mute, DeviceID
 SoundGet, master_mute, , mute, DeviceID
 
 if (master_mute = "off") {
-  Menu, Tray, Icon, icons//mic.png, , 1
+  Menu, Tray, Icon, icons//w_mic.png, , 1
   SoundPlay, sounds//unmute.mp3,
 } else {
-  Menu, Tray, Icon, icons//muted.png, , 1
+  Menu, Tray, Icon, icons//w_muted.png, , 1
   SoundPlay, sounds//mute.mp3,
 }
 
