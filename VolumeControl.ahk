@@ -9,6 +9,9 @@
 ;
 ;
 ;
+#Include, %A_ScriptDir%
+#Include, va.ahk
+
 #SingleInstance
 #NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #MaxHotkeysPerInterval, 500
@@ -37,6 +40,16 @@ if (master_mute = "off") {
 }
 
 Menu, Tray, Tip, Mute %master_mute%
+return
+
+RAlt::Send {LEFT}
+RWin::Send {DOWN}
+RControl::Send {RIGHT}
+RShift Up::
+    If (A_PriorKey = "RShift") ;  If RShift was pressed alone
+   	 Send, {Up} ; up arrow
+return
+>+Del:: Send {Shift Down}{Del}{Shift Up} ; >+ means RShift
 
 ~LWin Up:: return
 ~RWin Up:: return
