@@ -17,7 +17,7 @@
 #MaxHotkeysPerInterval, 500
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-DeviceID = 5 ; Use the getDeviceId.ahk to find out the Mixer ID.
+DeviceID = 7 ; Use the getDeviceId.ahk to find out the Mixer ID.
 SoundSet, 1, MASTER, mute, DeviceID
 Menu, Tray, Icon, icons//w_muted.png, , 1
 Menu, Tray, Tip, Mute On
@@ -41,15 +41,6 @@ if (master_mute = "off") {
 
 Menu, Tray, Tip, Mute %master_mute%
 return
-
-RAlt::Send {LEFT}
-RWin::Send {DOWN}
-RControl::Send {RIGHT}
-RShift Up::
-    If (A_PriorKey = "RShift") ;  If RShift was pressed alone
-   	 Send, {Up} ; up arrow
-return
->+Del:: Send {Shift Down}{Del}{Shift Up} ; >+ means RShift
 
 ~LWin Up:: return
 ~RWin Up:: return
