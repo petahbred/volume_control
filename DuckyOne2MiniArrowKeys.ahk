@@ -4,9 +4,6 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-RAlt::Send {LEFT}
-RWin::Send {DOWN}
-RControl::Send {RIGHT}
 RShift Up::
     If (A_PriorKey = "RShift") ;  If RShift was pressed alone
    	 Send, {Up} ; up arrow

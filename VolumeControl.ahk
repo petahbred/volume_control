@@ -17,8 +17,9 @@
 #MaxHotkeysPerInterval, 500
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-DeviceID = 7 ; Use the getDeviceId.ahk to find out the Mixer ID.
+DeviceID = 5 ; Use the getDeviceId.ahk to find out the Mixer ID.
 SoundSet, 1, MASTER, mute, DeviceID
+SoundSet, 80, , , DeviceID
 Menu, Tray, Icon, icons//w_muted.png, , 1
 Menu, Tray, Tip, Mute On
 
@@ -28,6 +29,7 @@ Menu, Tray, Tip, Mute On
 
 Pause::  ;Pause Break button is my chosen hotkey
 
+SoundSet, 80, , , DeviceID
 SoundSet, +1, MASTER, mute, DeviceID
 SoundGet, master_mute, , mute, DeviceID
 
