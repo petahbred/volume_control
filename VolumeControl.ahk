@@ -17,9 +17,12 @@
 #MaxHotkeysPerInterval, 500
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-DeviceID = 5 ; Use the getDeviceId.ahk to find out the Mixer ID.
-SoundSet, 1, MASTER, mute, DeviceID
-SoundSet, 80, , , DeviceID
+; DeviceID = 7 ; Use the getDeviceId.ahk to find out the Mixer ID.
+
+IMMDevice := VA_GetDevice("Microphone")
+VA_SetMute(true, , IMMDevice)
+
+VA_SetVolume(100.0, , , IMMDevice)
 Menu, Tray, Icon, icons//w_muted.png, , 1
 Menu, Tray, Tip, Mute On
 
@@ -29,14 +32,15 @@ Menu, Tray, Tip, Mute On
 
 Pause::  ;Pause Break button is my chosen hotkey
 
-SoundSet, 80, , , DeviceID
-SoundSet, +1, MASTER, mute, DeviceID
-SoundGet, master_mute, , mute, DeviceID
+VA_SetVolume(100.0, , , IMMDevice)
+master_mute := VA_GetMute(, IMMDevice)
 
-if (master_mute = "off") {
+if (master_mute) {
+  VA_SetMute(false, , IMMDevice)
   Menu, Tray, Icon, icons//w_mic.png, , 1
   SoundPlay, sounds//unmute.mp3,
 } else {
+  VA_SetMute(true, , IMMDevice)
   Menu, Tray, Icon, icons//w_muted.png, , 1
   SoundPlay, sounds//mute.mp3,
 }
