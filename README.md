@@ -19,10 +19,11 @@
     1. You can either "Right-Click" and Compile; This will compile it into an .exe file.
     1. Or you can run the script directly by double clicking.
 
-#### _(Optional) Running on Windows startup._
-1. Open the `Run` prompt. (WIN + R)
+#### _(Optional) Running on Windows startup with Administrator Privileges
+1. Create a shortcut within your Windows start menu.
+1. Set the target: `C:\Windows\System32\schtasks.exe /run /tn "Volume Control"`
 1. Type `shell:startup`
-1. Create a shortcut for the VolumeControl.ahk(or .exe) in this directory.
+1. Move the shortcut for the VolumeControl.ahk(or .exe) in this directory.
 
 ## Usage
 
